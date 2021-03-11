@@ -1,4 +1,4 @@
-Lexical Analysis + Google Translate + Hump Naming
+Chinese and English code translation: Lexical Analysis + Google Translate + Hump Naming
 
 # Features
 1. Support clipboard text direct conversion
