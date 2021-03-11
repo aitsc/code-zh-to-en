@@ -1,12 +1,12 @@
-词法分析+谷歌翻译+驼峰命名
+Lexical Analysis + Google Translate + Hump Naming
 
-# 特色
-1. 支持剪切板文本直接转化
-2. 支持单文件转化
-3. 支持全文件夹批量转化
-4. 支持几百种编程语言
+# Features
+1. Support clipboard text direct conversion
+2. Support single file conversion
+3. support full folder batch conversion
+4. Support hundreds of programming languages
 
-# 注意
+# Tips
 1. 中文包名有可能会翻译成英文包名
 2. google翻译拒绝翻译问题(换ip)
 3. 变量翻译成关键字会在后面加_
@@ -18,7 +18,7 @@
 9. 如果翻译词重合, 则在后面加补_
 10. 类名词和类名相同的变量标识符使用大驼峰
 
-# 依赖包
+# Requirements
 1. pip install git+https://github.com/BoseCorp/py-googletrans.git
 2. pip install Pygments
 3. pip install pyperclip  # 入口处弱依赖，用于剪切板
