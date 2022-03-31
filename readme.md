@@ -19,6 +19,5 @@ Chinese and English code translation: Lexical Analysis + Google Translate + Hump
 10. 类名词和类名相同的变量标识符使用大驼峰
 
 # Requirements
-1. pip install git+https://github.com/BoseCorp/py-googletrans.git
+1. pip install googletrans==4.0.0-rc1
 2. pip install Pygments
-3. pip install pyperclip  # 入口处弱依赖，用于剪切板

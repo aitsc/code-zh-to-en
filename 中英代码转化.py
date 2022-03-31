@@ -10,9 +10,9 @@ from pygments.lexers import *
 from pygments.lexers import LEXERS
 from pygments.token import Token
 
-__author__  = "Shicheng Tan <xxj.tan@gmail.com>"
-__version__ = "1.0"
-__date__    = "2018-10-22"
+__author__  = "Shicheng Tan"
+__version__ = "1.1"
+__date__    = "2022-03-31"
 
 class 代码类:
     def __init__(self,地址或文本,解释器):
@@ -121,7 +121,7 @@ class 多文件代码中英翻译:
         修正翻译错成相同词=0
         类名词s=set(词 for 词,类型 in 代码名词 if 类型 in Token.Name.Class)
         for 词,类型 in 代码名词:
-            if len(原词_替换词)%5==0:
+            if len(原词_替换词)%1==0:
                 sys.stdout.write('\r')
                 print('\t%d/%d'%(len(原词_替换词),len(代码名词)),end='')
                 sys.stdout.flush()
@@ -262,11 +262,12 @@ class 中英翻译命名法:
                 if 字符.isalpha():
                     文本=文本[:i]+字符.lower()+文本[i+1:]
                     break
+        time.sleep(5)
         return 头部保留符号+文本
 
 def demo(代码源,输出位置='',默认解释器=eval('Python3Lexer'),输出翻译表='',同时拷贝其他文件=False):
     开始时间 = time.time();print(datetime.datetime.now())
-    translator = Translator(service_urls=['translate.google.cn'])
+    translator = Translator(service_urls=['translate.google.com'])
     翻译器=lambda x: translator.translate(x,dest='en').text
     多文件代码中英翻译_obj=多文件代码中英翻译(
         代码源=代码源,
@@ -297,13 +298,9 @@ def demo(代码源,输出位置='',默认解释器=eval('Python3Lexer'),输出�
 }
 
 if __name__=='__main__':
-    import pyperclip
-    代码源 = pyperclip.paste();输出位置=''
     代码源 = '中英代码转化.py'
     输出位置 = 'code-zh-to-en.py'
     默认解释器 = 默认_文件类型_解释器d['py']
     输出翻译表 = '-名词翻译对照表.txt'
     同时拷贝其他文件 = False # 代码源为文件夹时可用
-
     obj=demo(代码源, 输出位置, 默认解释器, 输出翻译表, 同时拷贝其他文件)
-    pyperclip.copy(obj.查看第一个代码(False))
